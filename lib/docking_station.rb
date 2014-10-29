@@ -1,21 +1,21 @@
+
 class Docking_station
 
+
 	def initialize
-		true
+		@bikes = []
 	end
 
-	def holding_bike?
-		@holding = true
+	def bike_count
+		@bikes.count 
 	end
 
-	def release_the_bike!
-		@holding = false
+	def dock(bike)
+		@bikes << bike 
 	end
 
-	def return_the_bike
-		@holding = true
-	end
 
 
 end
+
 

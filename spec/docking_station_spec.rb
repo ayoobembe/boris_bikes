@@ -2,35 +2,26 @@
 #hold the bike ... yaaaay!!
 #release the bike .... Wooohooo!
 #return the bike .... 
-
+#capacity needs to be stated
+#capacity needs to decrease when bike is released
+#capacity needs to increase when bike is returned
 
 require "docking_station.rb"
 
-	describe "docking station:" do
+	describe Docking_station do
 
-	let(:new_dock){Docking_station.new} 
-		context "is" do
+			it "should accept a bike" do
+				bike = Bike.new
+				station = Docking_station.new
+				expect(station.bike_count). to eq(0)
+				station.dock(bike)
+				expect(station.bike_count).to eq(1)
+			end 
+
+
 		
-			it "holding the bike" do  
-				#new_dock = Docking_station.new
-				expect(new_dock.holding_bike?).to be true
-			end			
-
-			it "release the bike" do   
-				#new_dock = Docking_station.new
-				expect(new_dock.release_the_bike!).to be false
-			end
-
-			it "return the bike" do
-				#new_dock = Docking_station.new
-				expect(new_dock.return_the_bike).to be true
-			end
-
-
-
-
-		end
 	end
+
 
 =begin
 it should accept a bike
