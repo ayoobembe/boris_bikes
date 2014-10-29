@@ -9,6 +9,9 @@
 require "docking_station.rb"
 
 	describe Docking_station do
+		
+		let(:bike){Bike.new}
+		let(:station){Docking_station.new}
 
 			it "should accept a bike" do
 				bike = Bike.new
@@ -19,6 +22,11 @@ require "docking_station.rb"
 			end 
 
 
+			it "should release a bike" do
+				station.dock(bike)
+				station.release(bike)
+				expect(station.bike_count).to eq(0)
+			end
 		
 	end
 
