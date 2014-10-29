@@ -17,11 +17,11 @@ class Bike
 @broken 
 
 	def initialize
-		fix!
+		@broken=false
 	end
 
 	def broken?
-		fix! 
+		@broken
 	end
 
 	def break!

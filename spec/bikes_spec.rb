@@ -5,6 +5,7 @@ describe Bike do
 
 let(:bike) {Bike.new}
 
+
 =begin
 before(:each) do
 	broken_bike.break!
