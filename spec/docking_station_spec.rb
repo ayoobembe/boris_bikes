@@ -13,6 +13,10 @@ require "docking_station.rb"
 		let(:bike){Bike.new}
 		let(:station){Docking_station.new(:capacity=>20)}
 
+			def fill_station(station)
+				20.times{ station.dock(Bike.new)}
+			end
+
 			it "should accept a bike" do
 				bike = Bike.new
 				station = Docking_station.new
@@ -31,6 +35,11 @@ require "docking_station.rb"
 				expect(station).not_to be_full
 				20.times {station.dock(Bike.new)}
 				expect(station).to be_full
+			end
+
+			it "should not accept a bike if it's full" do
+				fill_station station 
+				expect(lambda {station.dock(bike)}).to raise_error(RuntimeError)
 			end
 		
 	end
