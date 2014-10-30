@@ -7,11 +7,19 @@
 #capacity needs to increase when bike is returned
 
 
-require "docking_station"
+require "./lib/docking_station"
 
 
-	describe Docking_station do
-		
+describe Docking_station do
+
+	let(:station){ Docking_station.new(:capacity => 123)}
+
+	it "should allow setting default capacity on initializing" do
+		expect(station.capacity).to eq(123)
+	end
+
+
+=begin
 		let(:bike){Bike.new}
 		let(:station){Docking_station.new(:capacity=>20)}
 
@@ -51,10 +59,10 @@ require "docking_station"
 				station.dock(broken_bike)
 				expect(station.available_bikes).to eq([working_bike])
 			end
-
+=end
 
 		
-	end
+end
 
 
 =begin
