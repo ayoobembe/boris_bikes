@@ -6,7 +6,9 @@
 #capacity needs to decrease when bike is released
 #capacity needs to increase when bike is returned
 
-require "docking_station.rb"
+
+require "docking_station"
+
 
 	describe Docking_station do
 		
@@ -49,6 +51,8 @@ require "docking_station.rb"
 				station.dock(broken_bike)
 				expect(station.available_bikes).to eq([working_bike])
 			end
+
+
 		
 	end
 
